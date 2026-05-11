@@ -559,11 +559,33 @@
       padding: 1.25rem;
       transition: all var(--transition);
       cursor: pointer;
+      position: relative;
     }
     .panel-card:hover {
       border-color: var(--mw-royal);
       box-shadow: var(--shadow);
       transform: translateX(-3px);
+    }
+    .panel-card:hover::after {
+      content: '📍 Ver no mapa';
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: var(--mw-royal);
+      background: var(--mw-pale);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+      pointer-events: none;
+    }
+    .panel-card:focus {
+      outline: 2px solid var(--mw-royal);
+      outline-offset: 2px;
+    }
+    .panel-card:focus:not(:focus-visible) {
+      outline: none;
     }
     .panel-card.in-cart {
       border-color: var(--mw-royal);
@@ -1326,6 +1348,191 @@
       color: var(--gray-400);
       cursor: not-allowed;
     }
+
+    /* ============================================================
+       RESPONSIVO — Tablet, Mobile e Mobile Pequeno
+       Estratégia: reduzir gutter, simplificar grids, ajustar tipografia
+       ============================================================ */
+
+    /* TABLET (até 1024px) */
+    @media (max-width: 1024px) {
+      :root {
+        --gutter: 2rem;
+      }
+      .hero {
+        padding: 9rem 0 5rem;
+      }
+      .hero__title {
+        font-size: clamp(2.5rem, 7vw, 4rem);
+      }
+      .hero__stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .hero__stat-num {
+        font-size: 2.75rem;
+      }
+      .inventory-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .inventory-map {
+        height: 400px;
+      }
+      .inventory-list {
+        max-height: none;
+      }
+    }
+
+    /* MOBILE (até 768px) */
+    @media (max-width: 768px) {
+      :root {
+        --gutter: 1.25rem;
+      }
+      html {
+        font-size: 15px;
+      }
+
+      /* Navegação mobile: esconde links, deixa só logo + CTA */
+      .nav {
+        padding: 0.75rem 0;
+      }
+      .nav__inner {
+        gap: 0.5rem;
+      }
+      .nav__logo img {
+        height: 38px;
+      }
+      .nav__links a:not(.nav__cta) {
+        display: none;
+      }
+      .nav__cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+      }
+
+      /* Hero compacto */
+      .hero {
+        padding: 7rem 0 4rem;
+      }
+      .hero__eyebrow {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.85rem;
+      }
+      .hero__title {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.05;
+      }
+      .hero__lead {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .hero__actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero__stats {
+        margin-top: 3rem;
+        gap: 1.5rem 1rem;
+      }
+      .hero__stat-num {
+        font-size: 2.25rem;
+      }
+      .hero__stat-label {
+        font-size: 0.6875rem;
+      }
+
+      /* Seções gerais */
+      .section {
+        padding: 4rem 0;
+      }
+      .section-title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+      }
+      .section-lead {
+        font-size: 1rem;
+      }
+
+      /* Grids 4-col → 1-col */
+      .values-grid,
+      .modalidades-grid,
+      .processo-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+      }
+
+      /* Grids 2-col → 1-col em sobre */
+      .sobre-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+      }
+
+      /* Filtros do inventário em coluna única */
+      .filters {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem;
+      }
+      .filter-result {
+        text-align: center;
+      }
+
+      /* Mapa menor em mobile */
+      .inventory-map {
+        height: 320px;
+      }
+
+      /* Cards de painéis: badge e ID em uma linha */
+      .panel-card {
+        padding: 1rem;
+      }
+      .panel-card__name {
+        font-size: 0.95rem;
+      }
+
+      /* Footer empilhado */
+      .footer__grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+      }
+
+      /* Carrinho mobile: largura quase total */
+      .cart-aside {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Popup do Leaflet em mobile: legível */
+      .leaflet-popup-content-wrapper {
+        max-width: 280px;
+      }
+    }
+
+    /* MOBILE PEQUENO (até 480px) */
+    @media (max-width: 480px) {
+      :root {
+        --gutter: 1rem;
+      }
+      .hero__title {
+        font-size: clamp(1.75rem, 9vw, 2.5rem);
+      }
+      .hero__stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero__stat-num {
+        font-size: 2rem;
+      }
+      .section {
+        padding: 3rem 0;
+      }
+      .inventory-map {
+        height: 280px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1751,6 +1958,7 @@
     let currentFilters = { city: 'all', type: 'all', status: 'all' };
     let mapInstance = null;
     let markersGroup = null;
+    let markersById = {}; // Mapa de painelId → marker do Leaflet (para zoom ao clicar)
 
     const $ = (s) => document.querySelector(s);
     const $$ = (s) => document.querySelectorAll(s);
@@ -1783,6 +1991,7 @@
     function renderMarkers() {
       if (!markersGroup) return;
       markersGroup.clearLayers();
+      markersById = {}; // Limpa mapeamento ao recriar marcadores
       const filtered = getFiltered();
 
       // Agrupar pontos no mesmo lat/lng
@@ -1862,7 +2071,39 @@
 
         marker.bindPopup(popupHtml);
         markersGroup.addLayer(marker);
+
+        // Registrar este marker para cada painel do grupo
+        // (painéis no mesmo local físico compartilham o mesmo marker no mapa)
+        group.forEach(p => {
+          markersById[p.id] = marker;
+        });
       });
+    }
+
+    // Centraliza o mapa no painel e abre o popup
+    function focusOnPanel(panelId) {
+      const marker = markersById[panelId];
+      if (!marker || !mapInstance) return;
+
+      const latlng = marker.getLatLng();
+      // Zoom suave nível 15 (bairro)
+      mapInstance.flyTo(latlng, 15, {
+        duration: 1.2,  // 1.2 segundos
+        easeLinearity: 0.3
+      });
+
+      // Abre o popup depois que a animação termina
+      setTimeout(() => {
+        marker.openPopup();
+      }, 1300);
+
+      // No mobile, rola a tela pro mapa pra garantir que o usuário vê o resultado
+      if (window.innerWidth <= 1024) {
+        document.getElementById('map').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
     }
 
     function renderList() {
@@ -1885,7 +2126,7 @@
         const statusKey = p.status === 'Disponível' ? 'livre' : 'ocupado';
 
         return `
-          <article class="panel-card ${inCart ? 'in-cart' : ''}">
+          <article class="panel-card ${inCart ? 'in-cart' : ''}" onclick="focusOnPanel('${p.id}')" role="button" tabindex="0">
             <div class="panel-card__top">
               <span class="panel-card__id">${p.id}</span>
               <span class="panel-card__badge panel-card__badge--${p.tipo.toLowerCase()}">${p.tipo}</span>
@@ -1899,8 +2140,8 @@
             <span class="panel-card__status status-${statusKey}">${p.status}</span>
             ${p.status === 'Disponível'
               ? inCart
-                ? `<button class="panel-card__add panel-card__add--added" onclick="removeFromCart('${p.id}')">✓ Adicionado · Remover</button>`
-                : `<button class="panel-card__add" onclick="addToCart('${p.id}')">+ Adicionar à proposta</button>`
+                ? `<button class="panel-card__add panel-card__add--added" onclick="event.stopPropagation(); removeFromCart('${p.id}')">✓ Adicionado · Remover</button>`
+                : `<button class="panel-card__add" onclick="event.stopPropagation(); addToCart('${p.id}')">+ Adicionar à proposta</button>`
               : `<button class="panel-card__add" disabled>${p.status}</button>`
             }
           </article>`;
