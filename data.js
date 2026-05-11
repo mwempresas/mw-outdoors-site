@@ -1,6 +1,6 @@
-📋 CÓDIGO data.js — copie a coluna A e cole no seu arquivo data.js
 // MW Outdoors - Inventário de painéis
 // Gerado automaticamente a partir da planilha
+
 const PAINEIS = [
   {
     id: "PL-OUT-001",
@@ -13,8 +13,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,597605,
-    lng: -44,049367
+    lat: -19.597605,
+    lng: -44.049367
   },
   {
     id: "PL-OUT-002",
@@ -27,8 +27,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Ocupado",
-    lat: -19,597605,
-    lng: -44,049367
+    lat: -19.597605,
+    lng: -44.049367
   },
   {
     id: "PL-LED-001",
@@ -41,8 +41,8 @@ const PAINEIS = [
     area: "4 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,600677,
-    lng: -44,028666
+    lat: -19.600677,
+    lng: -44.028666
   },
   {
     id: "PL-LED-001-BL",
@@ -55,8 +55,8 @@ const PAINEIS = [
     area: "4 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,600677,
-    lng: -44,028666
+    lat: -19.600677,
+    lng: -44.028666
   },
   {
     id: "MTZ-OUT-001",
@@ -69,8 +69,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,576964,
-    lng: -44,059313
+    lat: -19.576964,
+    lng: -44.059313
   },
   {
     id: "MTZ-OUT-002",
@@ -83,8 +83,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,576964,
-    lng: -44,059313
+    lat: -19.576964,
+    lng: -44.059313
   },
   {
     id: "MTZ-OUT-003",
@@ -97,8 +97,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,575267,
-    lng: -44,063266
+    lat: -19.575267,
+    lng: -44.063266
   },
   {
     id: "MTZ-OUT-004",
@@ -111,8 +111,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19,575267,
-    lng: -44,063266
+    lat: -19.575267,
+    lng: -44.063266
   },
   {
     id: "SJL-OUT-001",
@@ -125,8 +125,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Ocupado",
-    lat: -19,718216,
-    lng: -43,958025
+    lat: -19.718216,
+    lng: -43.958025
   },
   {
     id: "SJL-OUT-002",
@@ -139,8 +139,8 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Ocupado",
-    lat: -19,718216,
-    lng: -43,958025
+    lat: -19.718216,
+    lng: -43.958025
   },
   {
     id: "CL-OUT-001",
@@ -153,7 +153,7 @@ const PAINEIS = [
     area: "27 m²",
     fluxo: "Alto",
     status: "Ocupado",
-    lat: -20,451513,
-    lng: -44,778629
-  },
+    lat: -20.451513,
+    lng: -44.778629
+  }
 ];
