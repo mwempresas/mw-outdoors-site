@@ -1,5 +1,6 @@
 // MW Outdoors - Inventário de painéis
-// Gerado automaticamente a partir da planilha
+// Gerado automaticamente em 11/05/2026, 00:07:02
+// Total: 11 painéis
 
 const PAINEIS = [
   {
@@ -138,7 +139,7 @@ const PAINEIS = [
     dimensoes: "10,00 × 4,00 m",
     area: "40 m²",
     fluxo: "Muito Alto",
-    status: "Ocupado",
+    status: "Disponível",
     lat: -19.718216,
     lng: -43.958025
   },
