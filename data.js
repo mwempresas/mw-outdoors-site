@@ -1,15 +1,10 @@
+📋 CÓDIGO data.js — copie a coluna A e cole no seu arquivo data.js
 // MW Outdoors - Inventário de painéis
-// Atualizado em maio/2026
-// 11 pontos comerciais: 9 outdoors + 1 LED Digital + 1 Backlight
-// Status: "Disponível" ou "Ocupado"
-
+// Gerado automaticamente a partir da planilha
 const PAINEIS = [
-  // ============================================================
-  // PEDRO LEOPOLDO
-  // ============================================================
   {
     id: "PL-OUT-001",
-    nome: "Pedro Leopoldo - Rodovia MG-424, KM 22 (Vargem Alegre)",
+    nome: "Pedro Leopoldo - Vargem Alegre (PL → MTZ)",
     tipo: "Outdoor",
     cidade: "Pedro Leopoldo",
     bairro: "Vargem Alegre",
@@ -18,12 +13,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.597605,
-    lng: -44.049367
+    lat: -19,597605,
+    lng: -44,049367
   },
   {
     id: "PL-OUT-002",
-    nome: "Pedro Leopoldo - Rodovia MG-424, KM 22 (Vargem Alegre)",
+    nome: "Pedro Leopoldo - Vargem Alegre (MTZ → PL)",
     tipo: "Outdoor",
     cidade: "Pedro Leopoldo",
     bairro: "Vargem Alegre",
@@ -32,12 +27,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Ocupado",
-    lat: -19.597605,
-    lng: -44.049367
+    lat: -19,597605,
+    lng: -44,049367
   },
   {
     id: "PL-LED-001",
-    nome: "Pedro Leopoldo - Totem LED Digital (Parque Andiara)",
+    nome: "Pedro Leopoldo - Parque Andiara (Centro → PLRS)",
     tipo: "LED",
     cidade: "Pedro Leopoldo",
     bairro: "Parque Andiara",
@@ -46,12 +41,12 @@ const PAINEIS = [
     area: "4 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.600677,
-    lng: -44.028666
+    lat: -19,600677,
+    lng: -44,028666
   },
   {
     id: "PL-LED-001-BL",
-    nome: "Pedro Leopoldo - Backlight (Parque Andiara)",
+    nome: "Pedro Leopoldo - Parque Andiara (Centro → PLRS)",
     tipo: "Backlight",
     cidade: "Pedro Leopoldo",
     bairro: "Parque Andiara",
@@ -60,16 +55,12 @@ const PAINEIS = [
     area: "4 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.600677,
-    lng: -44.028666
+    lat: -19,600677,
+    lng: -44,028666
   },
-
-  // ============================================================
-  // MATOZINHOS
-  // ============================================================
   {
     id: "MTZ-OUT-001",
-    nome: "Matozinhos - Rodovia MG-424, KM 25 (Bom Jesus)",
+    nome: "Matozinhos - Bom Jesus (PL → MTZ)",
     tipo: "Outdoor",
     cidade: "Matozinhos",
     bairro: "Bom Jesus",
@@ -78,12 +69,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.576964,
-    lng: -44.059313
+    lat: -19,576964,
+    lng: -44,059313
   },
   {
     id: "MTZ-OUT-002",
-    nome: "Matozinhos - Rodovia MG-424, KM 25 (Bom Jesus)",
+    nome: "Matozinhos - Bom Jesus (MTZ → PL)",
     tipo: "Outdoor",
     cidade: "Matozinhos",
     bairro: "Bom Jesus",
@@ -92,12 +83,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.576964,
-    lng: -44.059313
+    lat: -19,576964,
+    lng: -44,059313
   },
   {
     id: "MTZ-OUT-003",
-    nome: "Matozinhos - Rodovia MG-424, KM 23 (São Sebastião)",
+    nome: "Matozinhos - São Sebastião (PL → MTZ)",
     tipo: "Outdoor",
     cidade: "Matozinhos",
     bairro: "São Sebastião",
@@ -106,12 +97,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.575267,
-    lng: -44.063266
+    lat: -19,575267,
+    lng: -44,063266
   },
   {
     id: "MTZ-OUT-004",
-    nome: "Matozinhos - Rodovia MG-424, KM 23 (São Sebastião)",
+    nome: "Matozinhos - São Sebastião (MTZ → PL)",
     tipo: "Outdoor",
     cidade: "Matozinhos",
     bairro: "São Sebastião",
@@ -120,16 +111,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Disponível",
-    lat: -19.575267,
-    lng: -44.063266
+    lat: -19,575267,
+    lng: -44,063266
   },
-
-  // ============================================================
-  // SÃO JOSÉ DA LAPA
-  // ============================================================
   {
     id: "SJL-OUT-001",
-    nome: "São José da Lapa - Rodovia MG-424, KM 5 (Jardim Encantado)",
+    nome: "São José da Lapa - Jardim Encantado (BH → PL)",
     tipo: "Outdoor",
     cidade: "São José da Lapa",
     bairro: "Jardim Encantado",
@@ -138,12 +125,12 @@ const PAINEIS = [
     area: "40 m²",
     fluxo: "Muito Alto",
     status: "Ocupado",
-    lat: -19.718216,
-    lng: -43.958025
+    lat: -19,718216,
+    lng: -43,958025
   },
   {
     id: "SJL-OUT-002",
-    nome: "São José da Lapa - Rodovia MG-424, KM 5 (Jardim Encantado)",
+    nome: "São José da Lapa - Jardim Encantado (PL → BH)",
     tipo: "Outdoor",
     cidade: "São José da Lapa",
     bairro: "Jardim Encantado",
@@ -151,17 +138,13 @@ const PAINEIS = [
     dimensoes: "10,00 × 4,00 m",
     area: "40 m²",
     fluxo: "Muito Alto",
-    status: "Disponível",
-    lat: -19.718216,
-    lng: -43.958025
+    status: "Ocupado",
+    lat: -19,718216,
+    lng: -43,958025
   },
-
-  // ============================================================
-  // CLÁUDIO
-  // ============================================================
   {
     id: "CL-OUT-001",
-    nome: "Cláudio - Rodovia MG-260, KM 33 (Cachoeirinha)",
+    nome: "Cláudio - Cachoeirinha (DIV → CL / CL → DIV)",
     tipo: "Outdoor",
     cidade: "Cláudio",
     bairro: "Cachoeirinha",
@@ -170,7 +153,7 @@ const PAINEIS = [
     area: "27 m²",
     fluxo: "Alto",
     status: "Ocupado",
-    lat: -20.451513,
-    lng: -44.778629
-  }
+    lat: -20,451513,
+    lng: -44,778629
+  },
 ];
